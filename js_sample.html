@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Examples</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  
+  <script> 
+  $(document).ready(function(){
+      $(".hide").click(function(){
+          //$(this).hide();
+          //$(this).fadeOut();
+          //$(this).fadeOut("slow");
+          $(this).fadeOut(3000);
+      });
+      
+      $(".show").click(function(){
+          //$(".hide").show();
+          $(".hide").show(1000);
+      });
+      
+      $(".toggle").click(function(){
+          $(".toggleP").toggle();
+      });
+
+      $(".animate").click(function(){
+          $(".animateDiv").animate({width: '300px', height: '300px'});
+      });
+      
+      $(window).scroll(function (event) {
+          var scrollPosition = $(window).scrollTop();
+          console.log(scrollPosition)
+          if (scrollPosition >= 150) {
+            $("h1").css({"position": "fixed", "top": "-10px", "right": "100px"});
+          } else {
+            $("h1").css({"position": "inherit"});
+          }
+      });
+    /**/
+      
+  });
+  </script> 
+  
+</head>
+<body>
+  <h1>Animation</h1>
+  <h2>Syntax</h2>
+  <code>$(selector).animate({params},speed,callback);</code>
+  
+  <hr>
+  <h2>Hide</h2>
+  <p class="hide">If you click on me, I will disappear.</p>
+  <hr>
+  <h2>Show</h2>
+  <button class="show">Show!</button>
+  
+  <hr>
+  <h2>Toggle</h2>
+  <button class="toggle">Toggle</button>
+  <p class="toggleP">This is a paragraph.</p>
+  <hr>
+  
+  <h2>Animation</h2>
+  <button class="animate">Start Animation</button>
+  
+  <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+  <div class="animateDiv" style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+  <!--
+  -->
+</body>
+</html>
